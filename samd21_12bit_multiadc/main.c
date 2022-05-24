@@ -3,6 +3,10 @@
 int main(void)
 {
 	int ret=0;
+		int read_value_1=0;
+	int read_value_2=0;
+	int snc_1=0;
+	int snc_2=0;
 	/* Initializes MCU, drivers and middleware */
 	atmel_start_init();
 	
@@ -22,7 +26,17 @@ int main(void)
 			printf("PA06=%03d\r\n",adc_read.PA06_ADC_value);
 			printf("PA07=%03d\r\n",adc_read.PA07_ADC_value);
 			delay_ms(250);
-			
+				
+			for(int i=0;i<1023;i++)
+			{
+				read_value_1 += adc_read.PA06_ADC_value;
+					read_value_2 += adc_read.PA07_ADC_value;
+			}
+             snc_1 = read_value_1 /1023;
+			 snc_2 = read_value_2 /1023;
+			 printf("snc_1 = %03d\r\n",(int)snc_1);
+			 printf("snc_2 = %03d\r\n",(int)snc_2);
+			delay_ms(1000);
 		}
 		else
 		{

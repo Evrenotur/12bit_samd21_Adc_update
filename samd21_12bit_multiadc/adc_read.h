@@ -5,16 +5,11 @@
  *  Author: SOFTWARE
  */ 
 
-typedef struct
-{
-	uint8_t buffer[2];
-	uint8_t buffer2[2];
+typedef struct {
 	int16_t PA06_ADC_value;
 	int16_t PA07_ADC_value;
-	uint8_t a;
-	uint8_t b;
-	uint32_t sum;
-	
+	float PA06_voltage;
+	float PA07_voltage;
 }ADC_ReadTypeDef_t;
 
 int  ADC_Read(ADC_ReadTypeDef_t * ADC_ReadTypeDef);

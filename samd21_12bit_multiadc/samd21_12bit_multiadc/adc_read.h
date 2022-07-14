@@ -20,6 +20,8 @@ typedef struct {
 	int ort_2;
 	int read_value_1;
 	int read_value_2;
+	double db;
+		double db_2;
 }ADC_ReadTypeDef_t;
 
 /* int type Adc Read function*/
